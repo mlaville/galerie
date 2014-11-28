@@ -1,0 +1,16 @@
+/* TEAM */
+	Developer: Marc Laville
+	Twitter: @vavaPolinux
+	From: Saint-Lothain, Jura, Franche-Comté, France
+
+	Illustrator: Thérèse Laville
+	Mail: th.perso chez voila.fr
+	From: Saint-Lothain, Jura, Franche-Comté, France
+
+/* THANKS */
+
+
+/* SITE */
+	Last update:2014/11/29
+	Doctype:HTML5
+	IDE: Notepad++
