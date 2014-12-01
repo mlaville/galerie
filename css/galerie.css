@@ -1,3 +1,17 @@
+/**
+ * galerie.css
+ * 
+ * @auteur     marc laville
+ * @Copyleft 2014
+ * @date       01/12/2014
+ * @version    0.1
+ * @revision   $0$
+ *
+ * 
+ *
+ * Licensed under the GPL license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
 /* page layout */
 *{
     margin:0;
@@ -40,9 +54,16 @@ header h1{
 header h3{
 	font-size: 12px;
 	letter-spacing: 24px;
-	padding-left:12px;
+	margin-left:24px;
 }
 header a {
+	display: inline;
+	margin: 0 12px;
+}
+header a:first-child {
+	float: left;
+}
+header a:last-of-type {
 	float: right;
 }
 

@@ -7,7 +7,9 @@
  * @version    0.1
  * @revision   $0$
  *
- * - Gere la saisie des message depuis la galerie
+ * @date revision   01/05/2014 : capitalize
+ *
+ * - Affichage de la galerie et gestion des messages
  *
  * Licensed under the GPL license:
  *   http://www.opensource.org/licenses/mit-license.php
@@ -346,7 +348,9 @@ $(document).ready(function(){
 			  "src": "./galerie/octobre14I.jpg",
 			  "thumbUrl": "./galerie/thumb/octobre14I.png",
 			  "titre": "octobre14I",
-			  "hauteur": 0
+			  "hauteur": 30,
+			  "largeur": 40,
+			  "prix": 450
 			},
 			{
 			  "src": "./galerie/novembre14I.jpg",
@@ -417,10 +421,9 @@ $(document).ready(function(){
 				figcaption.textContent = modeleToile.titre;
 				figcaption.classList.add('img-caption');
 				
-				figcaption.appendChild(spanDim).textContent = '';
-				if( modeleToile.prix ) {
-					figcaption.appendChild(spanPrix).textContent = modeleToile.prix;
-				}
+				figcaption.appendChild(spanDim).textContent = 
+					( modeleToile.hauteur && modeleToile.largeur ) ? modeleToile.largeur + ' x ' + modeleToile.hauteur : '';
+				figcaption.appendChild(spanPrix).textContent = modeleToile.prix ? modeleToile.spanPrix : '';;
 				
 				liToile.classList.add('item--big');
 		
@@ -455,7 +458,6 @@ $(document).ready(function(){
 		ulToiles.classList.add('items--big');
 		
 		item.toiles.forEach( ajoutToile, [ulToiles, ulThumb] );
-	//	item.toiles.forEach( liToile, ulToiles );
 		
 		divWall.setAttribute( 'id', item.libelle );
 		divWall.classList.add('mur');
