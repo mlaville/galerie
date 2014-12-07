@@ -56,13 +56,15 @@ $(document).ready(function(){
 			  "src": "./galerie/avril14II.jpg",
 			  "thumbUrl": "./galerie/thumb/avril14II.png",
 			  "titre": "avril14II",
-			  "hauteur": 0
+			  "hauteur": 40,
+			  "largeur": 30
 			},
 			{
 			  "src": "./galerie/avril14III.jpg",
 			  "thumbUrl": "./galerie/thumb/avril14III.png",
 			  "titre": "avril14III",
-			  "hauteur": 0
+			  "hauteur": 40,
+			  "largeur": 30
 			},
 			{
 			  "src": "./galerie/avril14V.jpg",
@@ -134,7 +136,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/aout13III.jpg",
 			  "thumbUrl": "./galerie/thumb/aout13III.png",
-			  "titre": "aout13III",
+			  "titre": "août13III",
 			  "hauteur": 40,
 			  "largeur": 40,
 			  "prix": 350
@@ -179,33 +181,33 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/decembre13I.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre13I.png",
-			  "titre": "decembre13I",
+			  "titre": "décembre13I",
 			  "hauteur": 30,
 			  "largeur": 40
 			},
 			{
 			  "src": "./galerie/decembre13II.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre13II.png",
-			  "titre": "decembre13II",
+			  "titre": "décembre13II",
 			  "hauteur": 0
 			},
 			{
 			  "src": "./galerie/decembre13III.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre13III.png",
-			  "titre": "decembre13III",
+			  "titre": "décembre13III",
 			  "hauteur": 0
 			},
 			{
 			  "src": "./galerie/decembre13IV.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre13IV.png",
-			  "titre": "decembre13IV",
+			  "titre": "décembre13IV",
 			  "hauteur": 30,
 			  "largeur": 40
 			},
 			{
 			  "src": "./galerie/decembre13V.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre13V.png",
-			  "titre": "decembre13V",
+			  "titre": "décembre13V",
 			  "hauteur": 30,
 			  "largeur": 40
 			},
@@ -237,18 +239,18 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/fevrier14I.jpg",
 			  "thumbUrl": "./galerie/thumb/fevrier14I.png",
-			  "titre": "fevrier14I",
+			  "titre": "février14I",
 			  "hauteur": 0
 			},{
 			  "src": "./galerie/fevrier14II.jpg",
 			  "thumbUrl": "./galerie/thumb/fevrier14II.png",
-			  "titre": "fevrier14II",
+			  "titre": "février14II",
 			  "hauteur": 0
 			},
 			{
 			  "src": "./galerie/fevrier14III.jpg",
 			  "thumbUrl": "./galerie/thumb/fevrier14III.png",
-			  "titre": "fevrier14III",
+			  "titre": "février14III",
 			  "hauteur": 0
 			}
 		  ]
@@ -259,7 +261,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/fevrier14V.jpg",
 			  "thumbUrl": "./galerie/thumb/fevrier14V.png",
-			  "titre": "fevrier14V",
+			  "titre": "février14V",
 			  "hauteur": 0
 			}, {
 			  "src": "./galerie/mars14II.jpg",
@@ -363,6 +365,13 @@ $(document).ready(function(){
 			  "thumbUrl": "./galerie/thumb/novembre14II.png",
 			  "titre": "novembre14II",
 			  "hauteur": 0
+			},
+			{
+			  "src": "./galerie/decembre14I.jpg",
+			  "thumbUrl": "./galerie/thumb/decembre14I.png",
+			  "titre": "décembre14I",
+			  "hauteur": 30,
+			  "largeur": 40,
 			}
 		  ]
 		}

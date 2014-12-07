@@ -59,12 +59,12 @@ header h3{
 header a {
 	display: inline;
 	margin: 0 12px;
+	float: right;
+}
+header a {
 }
 header a:first-child {
 	float: left;
-}
-header a:last-of-type {
-	float: right;
 }
 
 nav ul{
