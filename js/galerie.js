@@ -7,7 +7,8 @@
  * @version    0.1
  * @revision   $0$
  *
- * @date revision   01/05/2014 : capitalize
+ * @aFaire
+ * - Externaliser les données
  *
  * - Affichage de la galerie et gestion des messages
  *
@@ -37,7 +38,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/fevrier14IV.jpg",
 			  "thumbUrl": "./galerie/thumb/fevrier14IV.png",
-			  "titre": "fevrier14IV",
+			  "titre": "février14IV",
 			  "hauteur": 0
 			},
 			{
@@ -75,7 +76,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/aout14I.jpg",
 			  "thumbUrl": "./galerie/thumb/aout14I.png",
-			  "titre": "aout14I",
+			  "titre": "août14I",
 			  "hauteur": 40,
 			  "largeur": 40,
 			  "prix": 350
@@ -120,7 +121,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/aout13I.jpg",
 			  "thumbUrl": "./galerie/thumb/aout13I.png",
-			  "titre": "aout13I",
+			  "titre": "août13I",
 			  "hauteur": 40,
 			  "largeur": 40,
 			  "prix": 350
@@ -128,7 +129,7 @@ $(document).ready(function(){
 			{
 			  "src": "./galerie/aout13II.jpg",
 			  "thumbUrl": "./galerie/thumb/aout13II.png",
-			  "titre": "aout13II",
+			  "titre": "août13II",
 			  "hauteur": 40,
 			  "largeur": 40,
 			  "prix": 350
@@ -336,7 +337,8 @@ $(document).ready(function(){
 			  "src": "./galerie/septembre14II.jpg",
 			  "thumbUrl": "./galerie/thumb/septembre14II.png",
 			  "titre": "septembre14II",
-			  "hauteur": 0
+			  "hauteur": 30,
+			  "largeur": 40
 			},
 			{
 			  "src": "./galerie/septembre14I.jpg",
@@ -364,14 +366,22 @@ $(document).ready(function(){
 			  "src": "./galerie/novembre14II.jpg",
 			  "thumbUrl": "./galerie/thumb/novembre14II.png",
 			  "titre": "novembre14II",
-			  "hauteur": 0
+			  "hauteur": 30,
+			  "largeur": 40
 			},
 			{
 			  "src": "./galerie/decembre14I.jpg",
 			  "thumbUrl": "./galerie/thumb/decembre14I.png",
 			  "titre": "décembre14I",
 			  "hauteur": 30,
-			  "largeur": 40,
+			  "largeur": 40
+			},
+			{
+			  "src": "./galerie/decembre14II.jpg",
+			  "thumbUrl": "./galerie/thumb/decembre14II.png",
+			  "titre": "décembre14II",
+			  "hauteur": 30,
+			  "largeur": 40
 			}
 		  ]
 		}
