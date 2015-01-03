@@ -5,7 +5,7 @@ app.factory("services", ['$http', function($http) {
 	obj = {};
 	
     obj.getExposition = function(){
-        return $http.get(serviceBase + 'exposition');
+        return $http.get(serviceBase + 'listToiles');
     }
     obj.getToile = function(toileID){
         return $http.get(serviceBase + 'toile?id=' + toileID);

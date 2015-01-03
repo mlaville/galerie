@@ -45,14 +45,10 @@ class API extends REST {
 			$this->response('',404); // If the method not exist with in this class "Page not found".
 	}
 			
-	private function exposition(){
-		if($this->get_request_method() != "GET"){
-			$this->response('',406);
-		}
-
-		$query = "SELECT idToile, path, titre, path_thumb, hauteur, largeur, tx_vibratoire, prix, date_creation"
+	private function loadExposition(){
+		$query = "SELECT idToile, path, titre, path_thumb, hauteur, largeur, tx_vibratoire, prix, mur, date_creation"
 				. " FROM t_toile"
-				. " ORDER BY 1";
+				. " ORDER BY mur";
 		
        try {
           $stmt = $this->db->prepare($query);
@@ -72,7 +68,30 @@ class API extends REST {
             $response["result"] = null;
         }
 
- 		$this->response( json_encode($response), 200 );
+		return $response;
+	}
+			
+	private function listToiles(){
+		if($this->get_request_method() != "GET"){
+			$this->response('',406);
+		}
+
+ 		$this->response( json_encode($this->loadExposition()), 200 );
+   }
+   
+	private function sauveExposition(){
+		$listToiles = $this->loadExposition();
+		$result = array();
+		
+		foreach( $listToiles["result"] as $toile ) {
+			$mur = $toile['mur'];
+			if( !isset( $result[$mur] ) ) {
+				$result[$mur] = array( "libelle" => $mur, "toiles" => array() );
+			}
+			$result[$mur]["toiles"][] = $toile;
+		}
+//		$this->response( json_encode( array( "walls" => array_values($result) ) ), 200 );
+		file_put_contents( "../../js/jsondata.js", 'var galerie = ' . json_encode( array( "walls" => array_values($result) ) ) . ';' . PHP_EOL);
    }
    
 	private function toile(){
@@ -136,6 +155,7 @@ class API extends REST {
 			$response["message"] = 'Select Failed: ' . $e->getMessage();
 			$response["result"] = null;
 		}
+		$this->sauveExposition();
 		$this->response( json_encode($response), 200 );
 	}
 }

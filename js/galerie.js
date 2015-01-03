@@ -18,7 +18,7 @@
  
 $(document).ready(function(){
 
-	var galerie = {
+	var /*galerie = {
 	  "walls": [
 		{
 		  "libelle": "mur-1",
@@ -395,7 +395,7 @@ $(document).ready(function(){
 		"e": "f"
 	  },
 	  "string": "Hello World"
-	},
+	},*/
 	ulNav = document.querySelectorAll('nav ul li a'),
 	selectLi = function( e ) {
 		var li = e.currentTarget.parentNode,
@@ -435,7 +435,7 @@ $(document).ready(function(){
 					spanPrix = document.createElement('span');
 					
 				img.setAttribute( 'alt', modeleToile.titre );
-				img.setAttribute( 'src', modeleToile.src );
+				img.setAttribute( 'src', modeleToile.path );
 				
 				figcaption.textContent = modeleToile.titre;
 				figcaption.classList.add('img-caption');
@@ -455,7 +455,7 @@ $(document).ready(function(){
 					img = aThumb.appendChild(document.createElement('img'));
 					
 				img.setAttribute( 'alt', modeleToile.titre );
-				img.setAttribute( 'src', modeleToile.thumbUrl );
+				img.setAttribute( 'src', modeleToile.path_thumb );
 				
 				aThumb.setAttribute( 'href', '#' );
 				
