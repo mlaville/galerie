@@ -1,3 +1,19 @@
+/**
+ * app-admin.js
+ * 
+ * @auteur     marc laville
+ * @Copyleft 2015
+ * @date       09/01/2014
+ * @version    0.1
+ * @revision   $0$
+ *
+ *
+ * Administration de la galerie
+ *
+ *
+ * Licensed under the GPL license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
 var app = angular.module('myApp', ['ngRoute']);
 
 app.factory("services", ['$http', function($http) {
@@ -72,7 +88,7 @@ app.config(['$routeProvider',
     $routeProvider.
       when('/', {
         title: 'exposition',
-        templateUrl: 'partials/exposition.html',
+        templateUrl: 'partials/liste-toiles.html',
         controller: 'listCtrl'
       })
       .when('/edit-toile/:toileID', {
@@ -81,8 +97,7 @@ app.config(['$routeProvider',
         controller: 'editCtrl',
         resolve: {
           customer: function(services, $route){
- //           var toileID = $route.current.params.toileID;
-            return services.getToile($route.current.params.toileID);
+            return services.getToile( $route.current.params.toileID );
           }
         }
       })
@@ -90,6 +105,7 @@ app.config(['$routeProvider',
         redirectTo: '/'
       });
 }]);
+
 app.run(['$location', '$rootScope', function($location, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;

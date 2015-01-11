@@ -1,4 +1,20 @@
 <?php
+/**
+ * api.php.js
+ * 
+ * @auteur     marc laville
+ * @Copyleft 2015
+ * @date       10/01/2014
+ * @version    0.1
+ * @revision   $0$
+ *
+ *
+ * REST api de gestion de la galerie
+ *
+ *
+ * Licensed under the GPL license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ */
  require_once 'config.php'; // Database setting constants [DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD]
  require_once("Rest.inc.php");
 	
@@ -30,7 +46,6 @@ class API extends REST {
 		
 		$this->db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
 		$this->db->exec("SET NAMES 'utf8'");
-
 	}
 		
 	/*
@@ -48,7 +63,7 @@ class API extends REST {
 	private function loadExposition(){
 		$query = "SELECT idToile, path, titre, path_thumb, hauteur, largeur, tx_vibratoire, prix, mur, date_creation"
 				. " FROM t_toile"
-				. " ORDER BY mur";
+				. " ORDER BY mur, idToile";
 		
        try {
           $stmt = $this->db->prepare($query);
@@ -91,7 +106,7 @@ class API extends REST {
 			$result[$mur]["toiles"][] = $toile;
 		}
 //		$this->response( json_encode( array( "walls" => array_values($result) ) ), 200 );
-		file_put_contents( "../../js/jsondata.js", 'var galerie = ' . json_encode( array( "walls" => array_values($result) ) ) . ';' . PHP_EOL);
+		file_put_contents( "../../data/galerie.json", json_encode( array( "walls" => array_values($result) ) ) . PHP_EOL);
    }
    
 	private function toile(){

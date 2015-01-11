@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+		<title>Administration Galerie Thérèse Laville</title>
+		<link rel="stylesheet" href="css/admin.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="customersController"> 
+
+<ul>
+  <li ng-repeat="x in murs">
+    {{ x.libelle }}
+    <ul>
+		<li ng:repeat="toile in x.toiles">
+		<img ng-src="{{ '../' + toile.thumbUrl }}" />
+		<fieldset>
+			<legend>{{toile.titre}}</legend>
+			<label>Titre
+				<input type="text" name="titre" value={{toile.titre}} class="form-control" placeholder="titre" required="" autofocus="" />
+				<input type="text" ng-model="toile.titre" class="form-control" />
+			</label>
+			<label>Dimension
+				<input name="hauteur" value="21" class="form-control" placeholder="h" type="text"> cm
+			</label>
+			<label>Prix
+				<input name="prix" value="" class="form-control input-prix" placeholder="prix" type="text">
+			</label>
+		</fieldset>		
+		</li>
+	</ul>
+  </li>
+</ul>
+
+</div>
+
+<script>
+function customersController($scope,$http) {
+  $http.get("http://localhost/git/galerie/data/galerie.json")
+  .success(function(response) {$scope.murs = response;});
+}
+</script>
+
+</body>
+</html>

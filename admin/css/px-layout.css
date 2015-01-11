@@ -1,0 +1,75 @@
+body>header, body>footer, body>nav {
+    background-color:#212121;
+    position:fixed;
+    z-index:100;
+}
+body>header, body>footer {
+    width:100%;
+}
+
+/* 
+ * header
+ *-----------------------------------------------------------------------------*/
+body>header {
+    top:0;
+    height:78px;
+}
+body>header h1, body>header h2, body>header h3{
+	text-align:center;
+	font-family: 'Raleway', sans-serif;
+	color:#CC00FF;
+	margin: 1px 2px;
+}
+body>header h1{
+    font-size:36px;
+	font-weight: 100;
+}
+body>header h2{
+	font-size: 24px;
+}
+body>header h3{
+	font-size: 12px;
+	letter-spacing: 24px;
+	margin-left:24px;
+}
+
+body>header a {
+	display: inline;
+	margin: 0 12px;
+	float: right;
+}
+
+/* 
+* Footer
+ *-----------------------------------------------------------------------------*/
+body>footer {
+	background: #ccc none repeat scroll 0pt 50%;
+	height: 15px; 
+	bottom: 0px;
+	text-align: center;
+}
+body>footer  a{
+	margin-right: 18px;
+	font-size: 12px;
+}
+body>footer  a:first-child{
+	margin-right: 18px;
+	font-size: 12px;
+}
+body>footer img{
+	border-style: none;
+}
+
+/* 
+* corps
+ *-----------------------------------------------------------------------------*/
+#corps {
+	padding: 78px 0 15px;
+/*	height:100%; */
+	top:0;
+	bottom:0;
+}
+
+.table-nonfluid {
+   width: auto;
+}

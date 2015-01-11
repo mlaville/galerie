@@ -1,0 +1,34 @@
+ <div class="row">
+    <div class="col-md-12" ng-show="toiles.length > 0">
+		<nav class= "navbar navbar-default" role="navigation" >
+			<div class= "navbar-header" >
+<!-- 			<a class="btn btn-lg btn-success" href="#/edit-toile/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Ajouter une Nouvelle Toile</a>
+ -->			</div>
+		</nav>
+        <table class="table table-condensed table-nonfluid">
+        <thead>
+        <th class="text-center">toile&nbsp;</th>
+        <th>description&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in toiles">
+                <td class="text-center"><img ng-src="{{ '../' + data.path_thumb }}" /></td>
+                <td>
+					<fieldset><legend>{{data.titre}}</legend>
+						<p>{{data.path}}</p>
+						<p>dimension : {{data.hauteur}} x {{data.largeur}} cm</p>
+						<p>tx_vibratoire : {{data.tx_vibratoire}}</p>
+						<p>prix : {{data.prix}} €</p>
+						<a href="#/edit-toile/{{data.idToile}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Modifier</a>
+					</fieldset>
+				</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="toiles.length == 0">
+        <div class="col-md-12">
+            <h4>No customers found</h4>
+        </div>
+    </div>
+</div>

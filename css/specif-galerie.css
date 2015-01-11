@@ -183,18 +183,28 @@
   font-size:.8em;
   text-align:center;
 }
-.item--big .img-caption span:first-child {
+.item--big .img-caption p {
+text-align: left;
+font-size:.8em;
+font-style:italic;
+
+}
+.item--big .img-caption span {
 	float: left;
-	font-size: .9em;
+	font-size: .8em;
 }
 .item--big .img-caption span:last-child {
 	float: right;
-	font-size: .9em;
 }
 .item--big .img-caption span:last-child :after{
 	content: '€';
-	font-size: .8em;
+	font-size: .7em;
 }
+
+figure:hover figcaption {
+height:0;
+}
+
 .fadeInScaleUp {
   -webkit-animation: fadeInScaleUp .5s ease-out .6s forwards;
   animation: fadeInScaleUp .5s ease-out .6s forwards;
