@@ -141,6 +141,7 @@
                 //to show index of img in list
                 var index = that.current + 1;
                 // startImg.find('.img-index').html(index + ' sur ' + that.count);
+				document.forms['cache'].current.value = index;
 
                 $this.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
                     startImg.addClass('fadeInScaleUp').removeClass('fadeOut');
@@ -236,7 +237,8 @@
             var currentImg = this.bigItemsList.children('li:eq(' + that.current + ')');
             //add this to show index of img in list
             var index = this.current + 1;
-            // currentImg.find('.img-index').html(index + ' sur ' + that.count);
+ //            currentImg.find('.img-index').html(index + ' sur ' + that.count);
+				document.forms['cache'].current.value = index;
                               currentImg.addClass('fadeInScaleUp')
                                         .siblings('li')
                                         .filter('.fadeInScaleUp')

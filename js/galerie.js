@@ -103,7 +103,8 @@ $(document).ready(function(){
 				  '<span class="control icon-arrow-left" data-direction="previous"></span>\n'
 				+ '<span class="control icon-arrow-right" data-direction="next"></span>\n'
 				+ '<span class="grid icon-grid"></span>\n'
-				+ '<span class="fs-toggle icon-fullscreen"></span>\n';
+				+ '<span class="fs-toggle icon-fullscreen"></span>\n'
+				+ '<span class="icon-achat"></span>\n';
 
 			return document.getElementById('galerie').appendChild(divWall);
 		}

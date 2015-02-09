@@ -258,3 +258,12 @@ left:150px;
 .gallery a:focus ~ .close {
     display:block;
 }
+
+.icon-achat {
+  display:inline-block;
+  margin-left: 24px;
+  width: 32px;
+  height: 32px;
+  background-image: url(../img/achat-light.png);
+  background-repeat: no-repeat
+}
