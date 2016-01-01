@@ -48,8 +48,7 @@ function mailHtml($destinataire, $expediteur, $sujet, $message) {
 		// load or save?
 		switch($cmd) {
 			case "create":
-
-				$stmt = $dbGalerie->prepare( $reqInsertCct );
+				$stmt = $dbContact->prepare( $reqInsertCct );
 				$tabParam = array( $_POST["mail"],
 									$_POST["msg"],
 									$_SERVER['REMOTE_ADDR']
@@ -62,8 +61,10 @@ function mailHtml($destinataire, $expediteur, $sujet, $message) {
 					$response["error"] = array( "reason"=>$err[2] );
 				}
 				
-//				mailHtml('therese.laville@voila.fr', $_POST["mail"], 'galerie', $_POST["msg"]);
-				mailHtml('vava.laville@voila.fr', $_POST["mail"], 'galerie', $_POST["msg"]);
+				mailHtml('th@polinux.fr', $_POST["mail"], 'galerie', $_POST["msg"]);
+				mailHtml('th.laville@free.fr', $_POST["mail"], 'galerie', $_POST["msg"]);
+				mailHtml('therese.laville@voila.fr', $_POST["mail"], 'galerie', $_POST["msg"]);
+				mailHtml('vava.laville@gmail.com', $_POST["mail"], 'galerie', $_POST["msg"]);
 				
 			break;
 			

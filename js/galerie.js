@@ -128,6 +128,9 @@ $(document).ready(function(){
 		 $('#mur-4').sGallery({
 			fullScreenEnabled: true
 		  });
+		 $('#mur-5').sGallery({
+			fullScreenEnabled: true
+		  });
 
 		  window.location.href = '#mur-1';
 	})
