@@ -7,8 +7,11 @@
  * @version    0.1
  * @revision   $0$
  *
+ * 
+ * @date revision   19/12/2016 Boucle sur les element par forEach
+ *
  * @aFaire
- * - Externaliser les données
+ * - JQuery less
  *
  * - Affichage de la galerie et gestion des messages
  *
@@ -19,21 +22,25 @@
 $(document).ready(function(){
 
 	var ulNav = document.querySelectorAll('nav ul li a'),
-		selectLi = function( e ) {
-			var li = e.currentTarget.parentNode,
-				lis = li.parentNode.querySelectorAll('li');
+    /**
+     * Selection d'un mur
+     */
+		selectMur = function( e ) {
+			var liSelect = e.currentTarget.parentNode;
 
-			for(i = 0 ; i < lis.length ; i++) {
-				var liCour = lis[i];
-				
-				if( liCour == li ){
+      Array.from( liSelect.parentNode.querySelectorAll('li') ).forEach( function(liCour) {
+				if( liCour == liSelect ){
 					liCour.classList.add('select');
 				} else {
 					liCour.classList.remove('select');
 				}
-			}
+      });
+
 			return;
 		},
+    /**
+     * Construction d'un mur
+     */
 		construitMur = function( item, index, array ) {
 			var divWall = document.createElement('div'),
 				h2Mur = divWall.appendChild(document.createElement('h2')),
@@ -79,18 +86,16 @@ $(document).ready(function(){
 					return liThumb;
 				},
 				ajoutToile = function(modeleToile) {
-					var t = this;
-					
-					t[1].appendChild(liThumb(modeleToile));
-					
-					return t[0].appendChild(liToile(modeleToile));
+
+          ulThumb.appendChild( liThumb(modeleToile) );
+					ulToiles.appendChild(liToile(modeleToile));
 				};
 			
 			h2Mur.textContent = item.libelle;
 			ulThumb.classList.add('items--small');
 			ulToiles.classList.add('items--big');
 			
-			item.toiles.forEach( ajoutToile, [ulToiles, ulThumb] );
+			item.toiles.forEach(ajoutToile);
 			
 			divWall.setAttribute( 'id', item.libelle );
 			divWall.classList.add('mur');
@@ -109,29 +114,15 @@ $(document).ready(function(){
 			return document.getElementById('galerie').appendChild(divWall);
 		}
 	
-	for(i = 0 ; i < ulNav.length ; i++) {
-		ulNav[i].addEventListener('click', selectLi );
-	}
-	
+  Array.from(ulNav).forEach( function(elmt) { return elmt.addEventListener('click', selectMur ); } );
+
 	$.getJSON( "./data/galerie.json", function( data ) {
 		data.walls.forEach( construitMur );
 		
-		 $('#mur-1').sGallery({
-			fullScreenEnabled: true
-		  });
-		 $('#mur-2').sGallery({
-			fullScreenEnabled: true
-		  });
-		 $('#mur-3').sGallery({
-			fullScreenEnabled: true
-		  });
-		 $('#mur-4').sGallery({
-			fullScreenEnabled: true
-		  });
-		 $('#mur-5').sGallery({
-			fullScreenEnabled: true
-		  });
+    ['#mur-1', '#mur-2', '#mur-3', '#mur-4', '#mur-5' ].forEach( function(str) {
+      return $(str).sGallery({ fullScreenEnabled: true });
+    });
 
-		  window.location.href = '#mur-1';
+    window.location.href = '#mur-1';
 	})
 });
